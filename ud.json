@@ -1,0 +1,65 @@
+[
+    	{
+		"Number": "1",
+		"Fragment": "It is a beautiful summer day. The sun shines warmly on an old house <audio src='soundbank://soundlibrary/home/amzn_sfx_vacuum_on_01'/> near a river (1). Behind the house a mother duck is sitting on ten eggs (2)",
+		"Question": "How many eggs does mama duck have in total?",
+		"Options": "Are there ten? or one?",
+		"Answer": "Ten",
+		"answerOption": "1",
+		"Explanation": "There are ten eggs"
+    },
+    {
+		"Number": "2",
+		"Fragment": "One by one all the eggs break open (3), but the biggest egg does not open",
+		"Question": "What happens to the biggest egg?",
+		"Options": "Does it open? or not open?",
+		"Answer": "Not Open",
+		"answerOption": "2",
+		"Explanation": "The biggest egg does not open"
+    },
+    {
+		"Number": "3",
+		"Fragment": "Mother duck sits and sits on the big egg. At last it breaks open (3). Out jumps the last baby duck (2). It looks big and strong, but grey and ugly",
+		"Question": "What color was the last baby duck?",
+		"Options": "Was it grey? or yellow?",
+		"Answer": "Grey",
+		"answerOption": "1",
+		"Explanation": "The last baby duck was grey and ugly"
+    },
+    {
+		"Number": "4",
+		"Fragment": "The next day mother duck takes all her little ducks to the river (2)(4). She jumps into it (5). All her baby ducks jump in (6)",
+		"Question": "What do you think will happen next?",
+		"Options": "Will it jump in? or stay on the dry land?",
+		"Answer": "Jump in",
+		"answerOption": "1",
+		"Explanation": "The big ugly duckling jumps in too (7)"
+    },
+    {
+		"Number": "5",
+		"Fragment": "(4) 'Come with me to the farm yard'! - says mother duck to her baby ducks, and they all follow her there. The farm yard is very noisy (0). The poor duckling is so unhappy there. The hens peck him, the rooster flies at him (8), the ducks bite him, the farmer kicks him (9)",
+		"Question": "How does the ugly duckling feel?",
+		"Options": "Is it happy? or sad?",
+		"Answer": "Sad",
+		"answerOption": "2",
+		"Explanation": "The ugly ducking feels sad"
+    },
+    {
+		"Number": "6",
+		"Fragment": "At last one day he runs away. He comes to a river (1). He sees many beautiful big birds swimming there. Their feathers are so white, their necks so long, their wings so pretty (10). The little duckling looks and looks at them, he wants to stay and watch them. He wants to be beautiful like them",
+		"Question": "What animals do you think they are?",
+		"Options": "Are they ducks, or swans?",
+		"Answer": "Swans",
+		"answerOption": "2",
+		"Explanation": "Swans are typically bigger and whiter than ducks"
+    },
+    {
+		"Number": "7",
+		"Fragment": "Now it is winter. Everything is white with snow (11). The river is covered with ice. The ugly duckling is very cold and unhappy. Then spring comes once again. The sun shines warmly. Everything is fresh and green",
+		"Question": "Which months are the winter months?",
+		"Options": "January? or October?",
+		"Answer": "January",
+		"answerOption": "1",
+		"Explanation": "If you live on the Northern hemisphere, winter months are typically from January to March; if you live on the Southern Hemisphere, winter months are June, July, and August"
+    }
+]
