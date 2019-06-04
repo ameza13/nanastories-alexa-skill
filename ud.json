@@ -1,65 +1,68 @@
 [
     	{
 		"Number": "1",
-		"Fragment": "It is a beautiful summer day. The sun shines warmly on an old house <audio src='soundbank://soundlibrary/home/amzn_sfx_vacuum_on_01'/> near a river (1). Behind the house a mother duck is sitting on ten eggs (2)",
-		"Question": "How many eggs does mama duck have in total?",
-		"Options": "Are there ten? or one?",
-		"Answer": "Ten",
-		"answerOption": "1",
-		"Explanation": "There are ten eggs"
+		"Fragment": "It is a beautiful summer day. The sun shines warmly on an old house near a river <audio src='https://manastoriesaudios.s3.amazonaws.com/1.stream+in+the+farm.mp3' /> behind the house a mother duck is sitting on six eggs <audio src='https://manastoriesaudios.s3.amazonaws.com/4.one+old+duck.mp3' />",
+		"Question": "Is this old house close to: ",
+		"Options": "a lake, or a river?",
+		"Answer": "river",
+		"AnswerOption": "2",
+		"Explanation": "The old house is close to a river",
+		"SecondQuestion":"Let's try again, is the old house close to a river?",
+		"BinaryAnswer": "Yes"
     },
     {
 		"Number": "2",
-		"Fragment": "One by one all the eggs break open (3), but the biggest egg does not open",
-		"Question": "What happens to the biggest egg?",
-		"Options": "Does it open? or not open?",
-		"Answer": "Not Open",
-		"answerOption": "2",
-		"Explanation": "The biggest egg does not open"
+		"Fragment": "One by one, the eggs break open <audio src='https://manastoriesaudios.s3.amazonaws.com/3.1continual+egg+cracking.mp3' /> most of them break open except one, the biggest egg.",
+		"Question": "How is the egg that does not break open: ",
+		"Options": "is it small, or big?",
+		"Answer": "big",
+		"AnswerOption": "2",
+		"Explanation": "The biggest egg does not open",
+		"SecondQuestion":"Let's try again, is this egg the biggest one?",
+		"BinaryAnswer": "Yes"
     },
     {
 		"Number": "3",
-		"Fragment": "Mother duck sits and sits on the big egg. At last it breaks open (3). Out jumps the last baby duck (2). It looks big and strong, but grey and ugly",
+		"Fragment": "Mother duck sits and sits on the big egg. At last it breaks open, out of it jumps the last baby duck <audio src='https://manastoriesaudios.s3.amazonaws.com/2.1+baby+duck.mp3' /> It looks big and strong, but grey and ugly.",
 		"Question": "What color was the last baby duck?",
 		"Options": "Was it grey? or yellow?",
-		"Answer": "Grey",
-		"answerOption": "1",
-		"Explanation": "The last baby duck was grey and ugly"
+		"Answer": "grey",
+		"AnswerOption": "1",
+		"Explanation": "The last baby duck was grey and ugly",
+		"SecondQuestion":"Let's try again, do you think the last baby duck was grey?",
+		"BinaryAnswer": "Yes"
     },
     {
 		"Number": "4",
-		"Fragment": "The next day mother duck takes all her little ducks to the river (2)(4). She jumps into it (5). All her baby ducks jump in (6)",
-		"Question": "What do you think will happen next?",
-		"Options": "Will it jump in? or stay on the dry land?",
-		"Answer": "Jump in",
-		"answerOption": "1",
-		"Explanation": "The big ugly duckling jumps in too (7)"
+		"Fragment": "The next day mother duck takes all her little ducks to the river <audio src='https://manastoriesaudios.s3.amazonaws.com/2.2lots+of+ducks.mp3' /><audio src='https://manastoriesaudios.s3.amazonaws.com/4.one+old+duck.mp3' /> She jumps into the river <audio src='https://manastoriesaudios.s3.amazonaws.com/5.bigsplash.mp3' /> then all her baby ducks jump in too.",
+		"Question": "Who jumped into the river?",
+		"Options": "the ugly duckling, or all the baby ducks?",
+		"Answer": "all the baby ducks",
+		"AnswerOption": "2",
+		"Explanation": "All of them including the big ugly duckling jumped into the river",
+		"SecondQuestion":"Let's try again, did all the baby ducks jumped into the river?",
+		"BinaryAnswer": "Yes"
     },
     {
 		"Number": "5",
-		"Fragment": "(4) 'Come with me to the farm yard'! - says mother duck to her baby ducks, and they all follow her there. The farm yard is very noisy (0). The poor duckling is so unhappy there. The hens peck him, the rooster flies at him (8), the ducks bite him, the farmer kicks him (9)",
+		"Fragment": " 'Come with me to the farm yard'! - says mother duck to her baby ducks, and they all follow her there. The farm yard is a noisy place <audio src='https://manastoriesaudios.s3.amazonaws.com/0.farm.mp3' /> The poor duckling is so unhappy there. The rooster flies at him <audio src='https://manastoriesaudios.s3.amazonaws.com/8.rooster+flying.mp3' /> and the farmer kicks him <audio src='https://manastoriesaudios.s3.amazonaws.com/9.get-out-of-my-house-female-angry-yelling.mp3' />",
 		"Question": "How does the ugly duckling feel?",
-		"Options": "Is it happy? or sad?",
-		"Answer": "Sad",
-		"answerOption": "2",
-		"Explanation": "The ugly ducking feels sad"
+		"Options": "Is it happy, or sad?",
+		"Answer": "sad",
+		"AnswerOption": "2",
+		"Explanation": "The ugly ducking feels sad",
+		"SecondQuestion":"Let's try again, do you think the last baby duck feels sad?",
+		"BinaryAnswer": "Yes"
     },
     {
 		"Number": "6",
-		"Fragment": "At last one day he runs away. He comes to a river (1). He sees many beautiful big birds swimming there. Their feathers are so white, their necks so long, their wings so pretty (10). The little duckling looks and looks at them, he wants to stay and watch them. He wants to be beautiful like them",
+		"Fragment": "At last one day he runs away. He comes to a river <audio src='https://manastoriesaudios.s3.amazonaws.com/1.stream+in+the+farm.mp3' /> He sees many beautiful big birds swimming there. Their feathers are so white, their necks so long, and their wings so pretty <audio src='https://manastoriesaudios.s3.amazonaws.com/10.swansflyby.mp3' /> The little duckling looks and looks at them, he wants to stay and watch them. He wants to be beautiful like them.",
 		"Question": "What animals do you think they are?",
 		"Options": "Are they ducks, or swans?",
-		"Answer": "Swans",
-		"answerOption": "2",
-		"Explanation": "Swans are typically bigger and whiter than ducks"
-    },
-    {
-		"Number": "7",
-		"Fragment": "Now it is winter. Everything is white with snow (11). The river is covered with ice. The ugly duckling is very cold and unhappy. Then spring comes once again. The sun shines warmly. Everything is fresh and green",
-		"Question": "Which months are the winter months?",
-		"Options": "January? or October?",
-		"Answer": "January",
-		"answerOption": "1",
-		"Explanation": "If you live on the Northern hemisphere, winter months are typically from January to March; if you live on the Southern Hemisphere, winter months are June, July, and August"
+		"Answer": "swans",
+		"AnswerOption": "2",
+		"Explanation": "Swans are typically bigger and whiter than ducks",
+		"SecondQuestion":"Let's try again, do you think the animals are swans?",
+		"BinaryAnswer": "Yes"
     }
 ]
