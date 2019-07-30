@@ -57,7 +57,7 @@ const SpeechToContinueStory = ['May I continue with the story?', 'Shall I contin
 const WELCOME_MESSAGE = 'Welcome to Nana Stories! Are you ready to hear a story and answer some questions?'
 
 // This is the message a user will hear when they start a quiz.
-const START_QUIZ_MESSAGE = " <p> I will tell you the story of the ugly duckling, pay attention and be prepared to answer questions about it. For instance, if I ask you what is the color of a car, you can say: <say-as interpret-as='interjection'> the answer is red </say-as><break strength='strong'/>. </p>"
+const START_QUIZ_MESSAGE = " <p> I will tell you the story of the ugly duckling, pay attention and be prepared to answer questions about it. For instance, if I ask you what is the color of a car, you can say: <say-as interpret-as='interjection'> red </say-as><break strength='strong'/>. </p>"
 							
 // This is the message a user will hear when they try to cancel or stop the skill, or when they finish a quiz.
 const EXIT_SKILL_MESSAGE = "Thank you for playing Nana Stories!  Let's play again soon!"
@@ -186,15 +186,10 @@ const startHandlers = Alexa.CreateStateHandler(states.START, {
   }
 })
 
-const quizHandlers = Alexa.CreateStateHandler(states.QUIZ, { //The source state is always QUIZ
+const quizHandlers = Alexa.CreateStateHandler(states.QUIZ, {
   'Quiz': function () {
-    //var d = new Date()
-    //var n = d.getDay() //getDay returns the day of the week for the specified date according to local time. The value is an integer 0=sunday, 1=monday
-    //var data = require('./' + n + '.json') //All info in the a given json file //OLD
 	  
     var data = require('./' + 'ud' + '.json')
-    
-    //console.log('quizHandlers: Quiz')//TEST
     
     this.attributes['data'] = data
     this.attributes['response'] = ''
@@ -211,12 +206,11 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ, { //The source state 
       this.attributes['quizitem'] = item
       this.attributes['counter']++
       
-      let question =  getFragment(this.attributes['counter'], item) + ' ' +getQuestion(this.attributes['counter'], item) //Here is question 1 says question 0
-      //this.emit(':tell', 'After question')
+      let question =  getFragment(this.attributes['counter'], item) + ' ' +getQuestion(this.attributes['counter'], item) 
       
       //Only for first question
       if (this.attributes['counter'] === 1) {
-        question = START_QUIZ_MESSAGE + " <p> <say-as interpret-as='interjection'> Let's go </say-as><break strength='strong'/> ! </p>" + question
+        question = START_QUIZ_MESSAGE + " <p>  Here we go! </p>" + question
       }    	  
       if (this.attributes['counter'] <= 6) { 
         this.emit(':ask', question, question)
@@ -269,7 +263,7 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ, { //The source state 
     	    this.emitWithState('AskSecondQuestion')
       }
     } catch(ex) {
-      this.emit(':ask', 'Please say your answer as a sentance. For example say it like this: answer is red')
+      this.emit(':ask', 'Please say your answer as a sentance. For example say it like this: the answer is red')
     }
   },
   'AMAZON.RepeatIntent': function () {
@@ -309,17 +303,99 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ, { //The source state 
 })
 
 const quizHandlersTier2 = Alexa.CreateStateHandler(states.QUIZTIER2, { //item = 0 , counter =1
-	  /*'AMAZON.NoIntent': function () {
-		  	this.emitWithState('AnswerIntent') //To catch Yes, if the AnswerIntent cannot catch it.
+	  'AMAZON.NoIntent': function () {
+		    let response = ''
+			    let speechOutput = ''
+			    let item = this.attributes['quizitem']
+			    
+			   // this.emit(':tell', 'current item is:' + item.BinaryAnswer  + 'current slot content is:'+ this.event.request.intent.slots.Answer.value.toString()) //TEST: both correct
+			    
+			    try {		 	    	
+			   	//this.emit(':ask', 'It does catches No')//Test
+			    	
+			    var correct = stringSimilarity.compareTwoStrings(/*this.event.request.intent.slots.Answer.value.toLowerCase()*/ 'no', item.BinaryAnswer.toLowerCase())
+
+			      if (correct) {
+			        response = getSpeechCon(true)
+			        if (this.attributes['quizscore'] < this.attributes['counter'] && this.attributes['answered'] === false) {
+			          this.attributes['quizscore']++
+			        }
+			      } else {     		    	  
+			        response = getSpeechCon(false)		        
+			      }
+			      
+			      this.attributes['answered'] = true
+			      response += getAnswer(item) //Find the answer
+
+			      if (this.attributes['counter'] < 6) {
+			        //response += getCurrentScore(this.attributes['quizscore'], this.attributes['counter']) //no need to say the score after every question
+
+			        this.attributes['response'] = response
+			        this.handler.state = states.QUIZ
+
+			        this.emit(':ask', response + ' ' + getSpeechToContinueStory(0))		    
+			        
+			      } else {
+			        response += getFinalScore(this.attributes['quizscore'], this.attributes['counter'])
+			        speechOutput = response + ' ' + EXIT_SKILL_MESSAGE
+
+			        this.response.speak(speechOutput)
+			        this.emit(':responseReady')
+			      }
+			    } catch(ex) {
+			      this.emit(':ask', 'Please answer Yes, or No')
+			    }
 	    },
 	  'AMAZON.YesIntent': function () {
-		  	//this.response.speak('Please, say your answer as a sentence. For instance say: I select Yes') //When user says 'Yes' instead of 'Select yes'
-			this.emitWithState('AnswerIntent') //To catch Yes, if the AnswerIntent cannot catch it.
-	   },*/
-	   'Unhandled': function () {
-		    this.emitWithState('AnswerIntent')
+		    let response = ''
+			    let speechOutput = ''
+			    let item = this.attributes['quizitem']
+			    
+			   // this.emit(':tell', 'current item is:' + item.BinaryAnswer  + 'current slot content is:'+ this.event.request.intent.slots.Answer.value.toString()) //TEST: both correct
+			    
+			    try {		 	    	
+			   	//this.emit(':ask', 'It does catches Yes')//Test
+			    	
+			    var correct = stringSimilarity.compareTwoStrings(/*this.event.request.intent.slots.Answer.value.toLowerCase()*/ 'yes', item.BinaryAnswer.toLowerCase())
+
+			      if (correct) {
+			        response = getSpeechCon(true)
+			        if (this.attributes['quizscore'] < this.attributes['counter'] && this.attributes['answered'] === false) {
+			          this.attributes['quizscore']++
+			        }
+			      } else {     		    	  
+			        response = getSpeechCon(false)		        
+			      }
+			      
+			      this.attributes['answered'] = true
+			      response += getAnswer(item) //Find the answer
+
+			      if (this.attributes['counter'] < 6) {
+			        //response += getCurrentScore(this.attributes['quizscore'], this.attributes['counter']) //no need to say the score after every question
+
+			        this.attributes['response'] = response
+			        this.handler.state = states.QUIZ
+
+			        this.emit(':ask', response + ' ' + getSpeechToContinueStory(0))		    
+			        
+			      } else {
+			        response += getFinalScore(this.attributes['quizscore'], this.attributes['counter'])
+			        speechOutput = response + ' ' + EXIT_SKILL_MESSAGE
+
+			        this.response.speak(speechOutput)
+			        this.emit(':responseReady')
+			      }
+			    } catch(ex) {
+			      this.emit(':ask', 'Please answer Yes, or No')
+			    }
 	   },
-	  'AnswerIntent': function () {      //When the user says the answer it will be caught by the 'AnswerIntent' in the 'quizHandlers'
+	   'Unhandled': function () {
+		    //this.emitWithState('AnswerIntent')  //OLD
+		   this.emitWithState('AskSecondQuestion') //If user says something different from Yes/No the question  is repeated
+	   },
+	  /*'AnswerIntent': function () {    
+		   //this.emit(':ask', 'Caught by AnswerIntent') //Test
+		  
 		    let response = ''
 		    let speechOutput = ''
 		    let item = this.attributes['quizitem']
@@ -362,7 +438,7 @@ const quizHandlersTier2 = Alexa.CreateStateHandler(states.QUIZTIER2, { //item = 
 		    } catch(ex) {
 		      this.emit(':ask', 'Please say your answer as a sentence. For instance, say: I select yes')
 		    }
-		  },
+		  },*/
 	  'AskSecondQuestion': function () {
 		    try {		    	  		    	  
 		    	  let item = this.attributes['quizitem']
@@ -381,7 +457,19 @@ const quizHandlersTier2 = Alexa.CreateStateHandler(states.QUIZTIER2, { //item = 
 		    } catch (ex) {
 		       this.emit(':tell', EXIT_SKILL_MESSAGE)
 		    }
-		  }		  
+		  },	
+	   'AMAZON.StopIntent': function () {
+		    this.response.speak(EXIT_SKILL_MESSAGE)
+		    this.emit(':responseReady')
+		  },
+	   'AMAZON.PauseIntent': function () {
+		    this.response.speak(EXIT_SKILL_MESSAGE)
+		    this.emit(':responseReady')
+		  },
+	   "AMAZON.CancelIntent": function() {
+		    this.response.speak(EXIT_SKILL_MESSAGE);
+		    this.emit(":responseReady");
+		  }
 })
 
 function compareSlotsTier1 (slots, item) {
@@ -401,7 +489,7 @@ function compareSlotsTier1 (slots, item) {
   }
 
   //Example with first item: Ten >=0.6 || 1 || option 1
-  if (similarity1 >= 0.6 || similarity2 === true || similarity3 === true) {
+  if (similarity1 >= 0.9 || similarity2 === true || similarity3 === true) {
     return true
   } else {
     return false
@@ -470,7 +558,7 @@ function getSpeechCon (type) {
 }
 
 function getSpeechQuestionIntro (type) {
-	  return "<say-as interpret-as='interjection'>" + speechConsQuestionIntro[getRandom(0, speechConsQuestionIntro.length - 1)] + "! </say-as><break strength='strong'/>"
+	  return "<p>" + speechConsQuestionIntro[getRandom(0, speechConsQuestionIntro.length - 1)] + ". </p>"
 }
 
 function getSpeechToContinueStory(type){

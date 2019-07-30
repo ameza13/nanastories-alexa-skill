@@ -7,29 +7,29 @@
 		"Answer": "river",
 		"AnswerOption": "2",
 		"Explanation": "The old house is close to a river",
-		"SecondQuestion":"Let's try again, is the old house close to a river?",
+		"SecondQuestion":"Let's try again, is the old house close to a river? Answer saying: Yes, or No",
 		"BinaryAnswer": "Yes"
     },
     {
 		"Number": "2",
-		"Fragment": "One by one, the eggs break open <audio src='https://manastoriesaudios.s3.amazonaws.com/3.1continual+egg+cracking.mp3' /> most of them break open except one, the biggest egg.",
-		"Question": "How is the egg that does not break open: ",
-		"Options": "is it small, or big?",
-		"Answer": "big",
-		"AnswerOption": "2",
-		"Explanation": "The biggest egg does not open",
-		"SecondQuestion":"Let's try again, is this egg the biggest one?",
+		"Fragment": "One by one, the eggs break open <audio src='https://manastoriesaudios.s3.amazonaws.com/3.1continual+egg+cracking.mp3' /> most of them break open except one, a big grey egg.",
+		"Question": "What color is  the biggest egg? ",
+		"Options": "is it grey, or white?",
+		"Answer": "grey",
+		"AnswerOption": "1",
+		"Explanation": "The biggest egg is grey",
+		"SecondQuestion":"Let's try again, is the biggest egg grey? Answer saying: Yes, or No",
 		"BinaryAnswer": "Yes"
     },
     {
 		"Number": "3",
 		"Fragment": "Mother duck sits and sits on the big egg. At last it breaks open, out of it jumps the last baby duck <audio src='https://manastoriesaudios.s3.amazonaws.com/2.1+baby+duck.mp3' /> It looks big and strong, but grey and ugly.",
 		"Question": "What color was the last baby duck?",
-		"Options": "Was it grey? or yellow?",
+		"Options": "Was it grey, or yellow?",
 		"Answer": "grey",
 		"AnswerOption": "1",
 		"Explanation": "The last baby duck was grey and ugly",
-		"SecondQuestion":"Let's try again, do you think the last baby duck was grey?",
+		"SecondQuestion":"Let's try again, do you think the last baby duck was grey? Answer saying: Yes, or No",
 		"BinaryAnswer": "Yes"
     },
     {
@@ -40,18 +40,18 @@
 		"Answer": "all the baby ducks",
 		"AnswerOption": "2",
 		"Explanation": "All of them including the big ugly duckling jumped into the river",
-		"SecondQuestion":"Let's try again, did all the baby ducks jumped into the river?",
+		"SecondQuestion":"Let's try again, did all the baby ducks jumped into the river? Answer saying: Yes, or No",
 		"BinaryAnswer": "Yes"
     },
     {
 		"Number": "5",
-		"Fragment": " 'Come with me to the farm yard'! - says mother duck to her baby ducks, and they all follow her there. The farm yard is a noisy place <audio src='https://manastoriesaudios.s3.amazonaws.com/0.farm.mp3' /> The poor duckling is so unhappy there. The rooster flies at him <audio src='https://manastoriesaudios.s3.amazonaws.com/8.rooster+flying.mp3' /> and the farmer kicks him <audio src='https://manastoriesaudios.s3.amazonaws.com/9.get-out-of-my-house-female-angry-yelling.mp3' />",
+		"Fragment": " <voice name='Ivy'> Come with me to the farm yard ! </voice> says mother duck to her baby ducks, and they all follow her there. The farm yard is a noisy place <audio src='https://manastoriesaudios.s3.amazonaws.com/0.farm.mp3' /> The poor duckling is so unhappy there. The rooster flies at him <audio src='https://manastoriesaudios.s3.amazonaws.com/8.rooster+flying.mp3' /> and the farmer kicks him <audio src='https://manastoriesaudios.s3.amazonaws.com/9.get-out-of-my-house-female-angry-yelling.mp3' />",
 		"Question": "How does the ugly duckling feel?",
 		"Options": "Is it happy, or sad?",
 		"Answer": "sad",
 		"AnswerOption": "2",
 		"Explanation": "The ugly ducking feels sad",
-		"SecondQuestion":"Let's try again, do you think the last baby duck feels sad?",
+		"SecondQuestion":"Let's try again, do you think the last baby duck feels sad? Answer saying: Yes, or No",
 		"BinaryAnswer": "Yes"
     },
     {
@@ -62,7 +62,7 @@
 		"Answer": "swans",
 		"AnswerOption": "2",
 		"Explanation": "Swans are typically bigger and whiter than ducks",
-		"SecondQuestion":"Let's try again, do you think the animals are swans?",
+		"SecondQuestion":"Let's try again, do you think the animals are swans? Answer saying: Yes, or No",
 		"BinaryAnswer": "Yes"
     }
 ]
